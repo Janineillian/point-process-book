@@ -1,0 +1,67 @@
+---
+title: "Motivation"
+header-includes:
+   - \usepackage{bbm}
+   - \usepackage{amsmath,latexsym}
+   - \newcommand{\bm}[1]{\mbox{\boldmath $#1$}}
+keep_tex: yes
+output: pdf_document
+number_sections: true
+documentclass: article
+toc: yes
+toc_depth: 3
+---
+
+```{r include = FALSE}
+library(viridis)
+library(INLA)
+library(inlabru)
+```
+\section{Intro}
+Somebody who opesm this book might wonder -- it this book for me? 
+  
+Many data sets with data structures that seem to be different initially.
+
+Spatial component that has not been traditionally pointed out/discussed.
+
+\section{Examples}
+
+\subsection{Spatially continuous data}
+
+```{r}
+data(gorillas) # get the data
+ gcov = gorillas$gcov
+
+ # Plot the elevation covariate
+ plot(gcov$elevation) 
+```
+
+\subsection{Spatial point patterns}
+\subsection{Data collected on transects}
+\subsection{Distance sampling data}
+
+
+People with spatial data 
+
+$\sum \mathbb{R} \bm{x} \times 4$
+
+```{r}
+data(gorillas) # get the data
+ # extract all the objects, for convenience:
+ nests = gorillas$nests
+ mesh = gorillas$mesh
+ boundary = gorillas$boundary
+ gcov = gorillas$gcov
+ gnestsamples = gorillas$plotsample
+ 
+ # plot all the nests, mesh and boundary
+ ggplot() + gg(mesh,lwd=0.1) + gg(boundary) + gg(nests, pch="+",cex=2)
+ 
+ # Plot the elevation covariate
+ plot(gcov$elevation) 
+ 
+ # Plot the plot sample
+ ggplot() + gg(gnestsamples$nests) + gg(gnestsamples$plots)
+```
+
+
