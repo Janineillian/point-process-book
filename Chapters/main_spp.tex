@@ -1,4 +1,7 @@
 \documentclass[authoryear]{book}
+\pdfoutput=1
+
+
 \usepackage{graphics}
 % or use the graphicx package for more complicated commands
 \usepackage{graphicx}
@@ -12,6 +15,8 @@
 \usepackage{subfigure}
 \usepackage{amsthm} %For theorems
  \usepackage{url}
+ \usepackage{ifpdf}
+
 
 \newcommand{\bm}[1]{\mbox{\boldmath $#1$}}
 
@@ -92,8 +97,12 @@
 \input{./core_chapters/Chapter_1/chapter_1}
 \graphicspath{{./figures/chap_2/}}
 \input{./core_chapters/Chapter_2/chapter_2}
-\printindex
+\graphicspath{{./figures/chap_3/}}
+\input{./core_chapters/Chapter_3/chapter_3}
+\graphicspath{{./figures/chap_4/}}
+\input{./core_chapters/Chapter_4/chapter_4}
 
+\printindex
 \end{document}
 
 
