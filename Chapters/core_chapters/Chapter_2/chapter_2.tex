@@ -1,24 +1,54 @@
-\chapter{Key concept--spatial point prcesses}
+\chapter{Key concept--spatial point processes}
 
 
 \section{A spatial point pattern}
 % kleines Beispiel durchziehen
 %David's data
 
-Refer again to Figure \ ref{fig:rainpattern}, which show the spatial pattern formed by rainforest trees in a tropical rainforest in XXX. 
+Refer to Figure \ref{fig:rainpattern2}, which shows the spatial pattern formed by rainforest trees in a tropical rainforest in XXX. 
 
-It has some structure to it -- 
+\begin{figure}
+\centering
+%\includegraphics[width=0.3\textwidth]{complete}
+%\includegraphics[width=0.6\textwidth]{sealsscotland}
+\includegraphics[width=0.6\textwidth]{rain_pattern}
+\caption{\label{fig:rainpattern2} Rainforest trees...}
+\end{figure}
 
-aim is to understand the structure
-
-\section{Spatial point processes}
-
+It has some structure to it -- there are areas where we find more trees than in other areas, i.e.\ the density of trees varies in space. There is an interest in understanding why this is the case- and hence a study aim could be to understand the spatial structure formed by the locations of trees in space.
+This is what point processes do -- they describe and model the spatial structure of 
+ 
+\section{Spatial point processes--intuition}
 Model location of objects in space.
+
+\subsection{The intensity}
+Initially one might want to understand how the density of trees varies in space, i.e.\ get a quantitative description of the number of individuals in space.
+
+\subsection{Relationship to covariates}
+
+\subsection{}
+
 
 \section{Thinned point processes}
 
 \subsection{Known thinning process}
 
 \subsection{Unknown thinning process}
+
+\section{Spatial point processes-- technical}
+\subsection{Mathematical background}\label{ch1_maths}
+The methodology developed for spatial point pattern data seeks to describe and analyse the patterns to infer information on the underlying mechanisms that generated them, i.e., a \textbf{spatial point pattern} formed by the spatial locations of objects in $d$-dimensional space, i.e.\ $\mathbf{x}=(x_1, \ldots, x_n)$, where $x_i \in \R^d, i = 1, \ldots, n$ and we typically have $d = 2$ or $d = 3$. 
+
+%\janine{examples of patterns - properties -- thesis}
+
+Technically, a spatial pattern is regarded as a realisation from a \textbf{random variable}, i.e.\  a stochastic structure that follows some distribution, referred to as a \textbf{spatial point process} $\mathbf{X}$. To understand this, recall the perhaps more familiar situation of data that are considered realisations from a theoretical random variable (or model) that follows, e.g., a normal distribution. In the context of spatial point patterns, the situation is complicated by the fact that all the points in the pattern together and the constellation that they form is a single observation (a single ``datum"). This implies that the random variable describing such a structure is bound to be a complicated mathematical object and hence to follow a rather complex distribution. This also implies that if an analysis is concerned with a single point pattern all information on this distribution has to be extracted from a single realisation\footnote{Ergodicity.}.
+
+In this book, we focus on the practical analysis of spatial point patterns and refer the reader interested in the mathematical  details underlying spatial point processes to the relevant statistical literature.  However, to appreciate that a point pattern differs from a standard dataset and that it is indeed a complicated object note that a suitable random variable representing this data structure needs to capture the fact that the number of observed points is random. This implies that the mathematically complicated concept of a random measure has to be used. This in turn means that even the mathematics underlying a model for a data set with relatively simple structure such as the one in Figure \ref{chap1:fig1} are challenging. It is hence not surprising that within the history of mathematics these models have been described only relatively recently. Outside the statistical literature they have been considered very rarely but are becoming more popular these days.
+
+A probability distribution (or model) familiar from non-spatial statistics assigns different probabilities to different realisations of a random variable -- realisations from a normal distribution are more likely to take on values that are close to the mean value but are less likely to take on values that are very different from the mean.  
+Similarly, a specific \textbf{spatial point process model} characterises the properties of the random variable by assigning different probabilities to different realisations of the point process, only that now the realisations are point patterns. For instance, realisations from a model that reflects clustering are likely to be clustered and rather unlikely to be regular.  To achieve this, the mathematical formulation of a spatial point process model contains parameters.  These reflect the characteristics of the process and ultimately the characteristics of the generated patterns, i.e.\ characteristics such as clustering, regularity or randomness as well as homogeneity or inhomogeneity.  A number of different \textbf{classes} of spatial point process models with similar mathematical descriptions and properties have been formulated in the literature (see e.g.\ \cite{lieshout:00}, \cite{moeller:03}, \cite{stoystoy:94}).
+
+
+
 
 

@@ -1,0 +1,6 @@
+book_filename: "IrnBrukdown"
+language:
+  ui:
+    chapter_name: "Chapter "
+delete_merged_file: true
+rmd_files: ["index.Rmd", "intro.Rmd", "literature.Rmd", "method.Rmd", "application.Rmd", "summary.Rmd", "references.Rmd"]

@@ -1,0 +1,27 @@
+--- 
+title: "IrnBrukdown"
+author: "The Wee Irn Bru Strongman"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: svmono
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+---
+
+
+```{r postlatex, echo = FALSE}
+options(bookdown.post.latex = function(x) {
+    cat(x, file = "CAT.txt")
+    from <- which(grepl("^\\\\usepackage\\{amsthm\\}", x))
+    to <- which(grepl("^\\\\newtheorem\\*\\{solution\\}", x))
+    x <- x[-(from:to)]
+  })
+```
+
+
+# Irn Bru 
+
+Made from Girders. 
