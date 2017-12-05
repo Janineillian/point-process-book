@@ -26,8 +26,37 @@ Initially one might want to understand how the density of trees varies in space,
 
 \subsection{Relationship to covariates}
 
-\subsection{}
+\subsection{Marked point processes}
 
+However, by just treating each individual simply as a point -- and hence assuming that all individuals are the same -- may still appear too simplistic. In many ecological data sets, in addition to spatial location further information associated with each individual is available. These data may take on many different forms and may be qualitative (age class, species) or quantitative (size or age) and are referred to as \textbf{marks}.  Note that we conceptionally distinguish between (spatial) covariates and marks. Spatial covariates take on values in continuous space -- even if they cannot be measured everywhere in space. Marks are properties of the objects represented by the points. As such marks can only take on values in a location where an object is present -- it does not make sense to consider the height of a tree in a location where there is no tree. The discussions throughout the book will make it clear why this distinction is relevant and not only a formal one.
+
+We will see through the case studies in Chapter 5-9 that very different types of questions may be addressed with different types of marked point pattern data. For instance, in the context of qualitative marks multi-type patterns may refer to individuals from different species. Here, one is often interested in understanding the co-occurrence of the different species  in space.  In Chapter 5 we discuss several approaches to a multi-type point pattern such as the the pattern in  Figure \ref{chap1:fig3} which shows the locations of the tree species \textit{Protium Tenuifolium} that we have already met in  Figure \ref{chap1:fig2} along with another species \textit{Tabernaemontana arborea}.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width= 0.6\textwidth, angle= 0]{multitype}
+\end{center}
+\caption{The locations of 4294 trees of the species \textit{Protium Tenuifolium} (circles) and of 2213 trees of the species \textit{Tabernaemontana arborea} (triangles) in a 50 ha plot on Barro Colorado Island, Panama.}
+%and a plot of the soil variable}
+\label{chap1:fig3}
+\end{figure}
+
+In the context of quantitative marks one is often interested in assessing if the marks are related to the properties of the pattern itself. For example, trees may be smaller in areas where tree density is high but bigger where it is low. In addition, several marks may be available and these might depend on both the local intensity of the spatial pattern and on other marks. In Chapter 9 we discuss a model of eucalyptus trees (Figure \ref{chap1:fig4} (a)) for which chemical properties of the leaves (their palatability) are available  (Figure \ref{chap1:fig3} (b)), along with the frequency of use of the trees by koalas feeding on the leaves (Figure \ref{chap1:fig4} (c)). We assume that these two types of marks are dependent, and explicitly model the dependence along with the pattern itself, as well as the dependence of the pattern with the different marks. This type of model is computationally complex as it is a hierarchical model consisting of three (non-independent) levels with three separate likelihoods. Fitting a model of such a complexity with MCMC would be really time-consuming if not infeasible. We will show how such a model can be fitted with INLA in a straight forward way -- and will also show that the general structure of a hierarchical model with several dependent levels is a very versatile construction that may be used in many contexts, not only for marked point patterns.
+
+ 
+\begin{figure}[!htb]
+       \centering
+    \begin{tabular}{c}
+        \mbox{
+            \subfigure[]{\includegraphics[width=10cm]{koala_food2_cut}}}\\
+\mbox{
+            \subfigure[]{\includegraphics[width=10cm]{koala_freq2_cut}}}
+    \end{tabular}
+    \caption{Spatial pattern formed by the locations of the eucalyptus
+        trees in the koala data set; the diameters of the circles
+        reflect the value of the leaf marks (a) and the frequency
+        marks (b) respectively.} 
+\label{chap1:fig4}
+\end{figure}
 
 \section{Thinned point processes}
 
